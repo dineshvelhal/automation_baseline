@@ -46,6 +46,12 @@
         <sonar.profile>WebDriver</sonar.profile>
       </properties>
     </profile>
+    <profile>
+      <id>my_profile</id>
+      <properties>
+        <sonar.profile>my_profile</sonar.profile>
+      </properties>
+    </profile>
   </profiles>
 
   <dependencies>

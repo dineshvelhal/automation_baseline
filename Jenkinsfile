@@ -12,22 +12,12 @@ pipeline {
             }
         }
         
-        stage("sonar_java"){
+        stage("sonar_java_webdriver"){
             steps{
-		withSonarQubeEnv('MySonarQube') {
+					withSonarQubeEnv('MySonarQube') {
                     // Optionally use a Maven environment you've configured already
-                    sh 'mvn -f pom.xml clean package sonar:sonar -Pjava -Dmaven.test.skip=true'
-                }
-            }
-
-        }
-        
-        stage("sonar_webdriver"){
-            steps{
-		withSonarQubeEnv('MySonarQube') {
-                    // Optionally use a Maven environment you've configured already
-                    sh 'mvn -f pom.xml clean package sonar:sonar -Pwebdriver -Dmaven.test.skip=true'
-                }
+                    sh 'mvn -f pom.xml clean package sonar:sonar -Pmy_profile -Dmaven.test.skip=true'
+                	}
             }
 
         }
