@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="gridurl" value="http://localhost:4444/wd/hub"/>
+    <parameter name="remote" value="no"/>
+    <classes>
+      <class name="com.dineshvelhal.tests.LoginTests">
+        <methods>
+          <include name="unsuccessful_login_test"/>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
+          <include name="successful_login_test"/>
+        </methods>
+      </class> <!-- com.dineshvelhal.tests.LoginTests -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

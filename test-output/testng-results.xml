@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="13889" started-at="2019-10-13T08:01:04Z" finished-at="2019-10-13T08:01:18Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="13889" started-at="2019-10-13T08:01:04Z" finished-at="2019-10-13T08:01:18Z">
+      <class name="com.dineshvelhal.tests.LoginTests">
+        <test-method status="PASS" signature="beforeClass(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dineshvelhal.tests.LoginTests@523884b2]" name="beforeClass" is-config="true" duration-ms="10708" started-at="2019-10-13T08:01:04Z" finished-at="2019-10-13T08:01:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://localhost:4444/wd/hub]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="successful_login_test()[pri:0, instance:com.dineshvelhal.tests.LoginTests@523884b2]" name="successful_login_test" duration-ms="957" started-at="2019-10-13T08:01:15Z" finished-at="2019-10-13T08:01:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- successful_login_test -->
+        <test-method status="PASS" signature="unsuccessful_login_test()[pri:0, instance:com.dineshvelhal.tests.LoginTests@523884b2]" name="unsuccessful_login_test" duration-ms="1059" started-at="2019-10-13T08:01:16Z" finished-at="2019-10-13T08:01:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unsuccessful_login_test -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.dineshvelhal.tests.LoginTests@523884b2]" name="afterClass" is-config="true" duration-ms="1109" started-at="2019-10-13T08:01:17Z" finished-at="2019-10-13T08:01:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.dineshvelhal.tests.LoginTests -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
