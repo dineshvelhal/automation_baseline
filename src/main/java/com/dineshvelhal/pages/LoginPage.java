@@ -10,7 +10,7 @@ public class LoginPage extends PageBase {
 
   private By loginErrorMsg = By.id("message");
 
-  private By registerLink = By.xpath("//a[@href='register.html']");
+  private By registerLink = By.cssSelector("a[href='register.html']");
 
   public LoginPage(WebDriver driver) {
     super(driver);
