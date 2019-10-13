@@ -12,7 +12,7 @@ pipeline {
             }
         }
         
-        stage("sonar_java_webdriver"){
+        stage('sonar - java & webdriver'){
             steps{
 					withSonarQubeEnv('MySonarQube') {
                     // Optionally use a Maven environment you've configured already
