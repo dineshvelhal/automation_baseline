@@ -2,7 +2,6 @@ package com.dineshvelhal.tests;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,7 +19,6 @@ public class TestConfig {
       if (browser.equalsIgnoreCase("chrome")) {
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         capabilities.setBrowserName("chrome");
-        capabilities.setPlatform(Platform.LINUX);
         driver = new RemoteWebDriver(new URL(gridURL), capabilities);
       } else {
         throw new WebDriverException("Only Chrome browser is supported at present");
