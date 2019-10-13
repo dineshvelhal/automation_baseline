@@ -10,6 +10,8 @@ public class LoginPage extends PageBase {
 
   private By loginErrorMsg = By.id("message");
 
+  private By registerLink = By.xpath("//a[@href='register.html']");
+
   public LoginPage(WebDriver driver) {
     super(driver);
   }
@@ -24,5 +26,11 @@ public class LoginPage extends PageBase {
 
   public String getLoginErrorMsg() {
     return driver.findElement(loginErrorMsg).getText();
+  }
+
+  public RegistrationPage gotoRegistration() {
+    driver.findElement(registerLink).click();
+
+    return new RegistrationPage(driver);
   }
 }

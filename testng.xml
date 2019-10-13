@@ -8,6 +8,7 @@
     <parameter name="app_url" value="http://testautomation-playground.herokuapp.com/login.html" /> -->
     <classes>
       <class name="com.dineshvelhal.tests.LoginTests" />
+      <class name="com.dineshvelhal.tests.RegistrationTests" />
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
