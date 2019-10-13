@@ -21,15 +21,13 @@ public class RegistrationPage extends PageBase {
   }
 
   public ConfirmationPage register(String firstName, String lastName, String email, String password,
-      String confirmPassword, boolean acceptTerms) throws InterruptedException {
+      String confirmPassword, boolean acceptTerms) {
 
     driver.findElement(firstNameField).sendKeys(firstName);
     driver.findElement(lastNameField).sendKeys(lastName);
     driver.findElement(emailField).sendKeys(email);
     driver.findElement(passwordField).sendKeys(password);
     driver.findElement(confirmPasswordField).sendKeys(confirmPassword);
-
-    // Thread.sleep(5000);
 
     WebElement acceptTermsElement = driver.findElement(acceptTermsCheckBox);
     if (!acceptTermsElement.isSelected() && acceptTerms) {
