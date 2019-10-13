@@ -8,7 +8,7 @@ pipeline {
     stages {
 		stage('Unit Tests') {
             steps{
-                sh 'mvn -f maths/pom.xml clean test -Dremote=yes -Dbrowser=chrome -Dgridurl=http://chrome_standalone:4444/wd/hub -Dappurl=http://testautomation-playground.herokuapp.com/login.html'
+                sh 'mvn -f pom.xml clean test -Dremote=yes -Dbrowser=chrome -Dgridurl=http://chrome_standalone:4444/wd/hub -Dappurl=http://testautomation-playground.herokuapp.com/login.html'
             }
         }
         
@@ -16,7 +16,7 @@ pipeline {
             steps{
 		withSonarQubeEnv('MySonarQube') {
                     // Optionally use a Maven environment you've configured already
-                    sh 'mvn -f maths/pom.xml clean sonar:sonar -Dmaven.test.skip=true'
+                    sh 'mvn -f pom.xml clean sonar:sonar -Dmaven.test.skip=true'
                 }
             }
 
@@ -61,7 +61,7 @@ pipeline {
             steps {
                 rtMavenRun (
                     tool: "maven3.6", // Tool name from Jenkins configuration
-                    pom: 'maths/pom.xml',
+                    pom: 'pom.xml',
                     goals: 'clean install -Dmaven.test.skip=true',
                     deployerId: "MAVEN_DEPLOYER",
                     resolverId: "MAVEN_RESOLVER"
