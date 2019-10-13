@@ -16,7 +16,7 @@ pipeline {
             steps{
 		withSonarQubeEnv('MySonarQube') {
                     // Optionally use a Maven environment you've configured already
-                    sh 'mvn -f pom.xml clean deploy sonar:sonar -Pjava -Dmaven.test.skip=true'
+                    sh 'mvn -f pom.xml clean package sonar:sonar -Pjava -Dmaven.test.skip=true'
                 }
             }
 
