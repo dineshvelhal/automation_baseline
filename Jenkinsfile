@@ -12,7 +12,7 @@ pipeline {
             }
         }
         
-        stage("sonar_static_check"){
+        stage("sonar_java"){
             steps{
 		withSonarQubeEnv('MySonarQube') {
                     // Optionally use a Maven environment you've configured already
@@ -21,16 +21,26 @@ pipeline {
             }
 
         }
-	
-	stage("Quality Gate") {
-            steps {
-                timeout(time: 2, unit: 'MINUTES') {
-                    // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
-                    // true = set pipeline to UNSTABLE, false = don't
-                    waitForQualityGate abortPipeline: true
+        
+        stage("sonar_webdriver"){
+            steps{
+		withSonarQubeEnv('MySonarQube') {
+                    // Optionally use a Maven environment you've configured already
+                    sh 'mvn -f pom.xml clean package sonar:sonar -Pwebdriver -Dmaven.test.skip=true'
                 }
             }
+
         }
+	
+//		stage("Quality Gate") {
+//            steps {
+//                timeout(time: 2, unit: 'MINUTES') {
+//                    // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
+//                    // true = set pipeline to UNSTABLE, false = don't
+//                    waitForQualityGate abortPipeline: true
+//                }
+//            }
+//        }
 
 		
         stage ('Artifactory configuration') {
