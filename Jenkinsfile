@@ -12,7 +12,13 @@ pipeline {
             }
         }
         
-        stage('Sonar - java & webdriver'){
+        stage('Integration Tests') {
+            steps{
+                sh 'mvn -f pom.xml clean test -Dremote=yes -Dbrowser=chrome -Dgridurl=http://chrome_standalone:4444/wd/hub -Dappurl=http://testautomation-playground.herokuapp.com/login.html'
+            }
+        }
+        
+        stage('SonarQube - Java & WebDriver'){
             steps{
 					withSonarQubeEnv('MySonarQube') {
                     // Optionally use a Maven environment you've configured already
@@ -33,7 +39,7 @@ pipeline {
 //        }
 
 		
-        stage ('Artifactory configuration') {
+        stage ('Artifactory Setup') {
             steps {
                 rtServer (
                     id: "ARTIFACTORY_SERVER",
