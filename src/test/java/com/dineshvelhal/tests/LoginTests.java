@@ -18,7 +18,7 @@ public class LoginTests {
   public void successful_login_test() {
     loginPage = new LoginPage(driver);
 
-    assertEquals(loginPage.login("admin", "admin").getTitle(), "Confirmation1!");
+    assertEquals(loginPage.login("admin", "admin").getTitle(), "Confirmation!");
   }
 
   @Test
